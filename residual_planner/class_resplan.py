@@ -1,3 +1,5 @@
+#! /usr/bin/python3
+
 import numpy as np
 import itertools
 import scipy.sparse as sp

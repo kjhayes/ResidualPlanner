@@ -1,3 +1,5 @@
+#! /usr/bin/python3
+
 from class_resplan import ResidualPlanner
 import numpy as np
 import itertools

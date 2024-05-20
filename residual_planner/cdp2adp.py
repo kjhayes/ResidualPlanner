@@ -1,3 +1,5 @@
+#! /usr/bin/python3
+
 """
    Copyright 2020 (https://github.com/IBM/discrete-gaussian-differential-privacy)
 
