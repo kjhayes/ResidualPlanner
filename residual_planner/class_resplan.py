@@ -124,14 +124,18 @@ class Mechanism:
     pass
 
 
+# This is talking about a single sub-set A of attributes
 class ResMech:
 
     def __init__(self, domains, att):
+        # List of all domains
         self.domains = domains
         self.num_att = len(self.domains)
+        # Subset of Attributes
         self.att = att
         self.core_mat = None
         self.res_mat_list = []
+
         self.get_core_matrix()
 
         self.noise_level = None
@@ -150,6 +154,7 @@ class ResMech:
                 res_mat = subtract_matrix(att_size)
                 self.res_mat_list.append(res_mat)
 
+    # Sigma-Squared
     def input_noise_level(self, noise_level):
         self.noise_level = noise_level
         self.calculated = True
@@ -180,7 +185,9 @@ class ResMech:
             sparse_vec = csr_matrix(datavector)
         true_answer = mult_kron_vec(self.res_mat_list, sparse_vec)
         col_size = np.prod(sub_domains).astype(int)
+
         rd = np.sqrt(self.noise_level) * np.random.normal(size=[col_size, 1])
+
         cov_rd = mult_kron_vec(self.res_mat_list, rd)
         self.noisy_answer = true_answer + cov_rd
         # todo: move it to class Mechnism

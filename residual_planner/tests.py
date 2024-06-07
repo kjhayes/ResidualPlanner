@@ -77,7 +77,6 @@ def test_two_one_way():
     return
 
 
-<<<<<<< Updated upstream
 def test1():
     R = np.array([[1, -1, 0, 0],
                   [1, 0, -1, 0],
@@ -111,8 +110,4 @@ if __name__ == '__main__':
 
     print("sum-of-var is:", sum_var)
     print("sigma squares are:", system.sigma_square)
-=======
-if __name__ == '__main__':
-    # compare_rho_empirical_error()
-    pass
->>>>>>> Stashed changes
+
